@@ -1,5 +1,5 @@
 /*
- * *** YOUR NAME GOES HERE / YOUR SECTION NUMBER ***
+ * *** Michael Simmons / COMP272-400C ***
  *
  * This HashingProblems object contains three methods / problems that you must
  * complete utilize the HashMap object within the Java's Collection Framework Library.
@@ -117,12 +117,14 @@ class HashingProblems {
       // The number of times the target (k) appears
       int target = 0;
 
-      // π
+      // First iteration to add numbers to the HashSet
       for (int n : numbers) {
           hashSet.add(n);
       }
+      // Second iteration to check for the target (k)
       for (int n : numbers) {
           if (hashSet.contains(n + k)) {
+              // if K is found, increment the target count (this number works)
               target++;
           }
       }
