@@ -33,15 +33,19 @@ class HashingProblems {
 
     public double getAverage(HashMap<Integer, Integer> map, int[] array) {
 
-        /*
-         * ADD YOUR CODE HERE - DO NOT FORGET TO ADD YOU NAME AT TOP OF FILE
-         *
-         * Note: if NO values found in common between the HashMap and supplied array,
-         * returning 0.0 is NOT correct, as that is not the average value. Whereas
-         * returning 0.0/0.0 IS correct (which would return a non-number).
-         */
+        // Variables to store the total sum of values and number of items
+        int totalValue = 0;
+        int numberOfValues = 0;
 
-         return 0.0 / 0.0;
+        // For loop to add up items and count the number of items
+        for (int i : array) {
+            if (map.containsKey(i)) {
+                totalValue += map.get(i);
+                numberOfValues++;
+            }
+        }
+        // Cast as double and return the result
+        return (double) totalValue / numberOfValues;
   }
 
 
@@ -55,14 +59,16 @@ class HashingProblems {
   public ArrayList<String> odd(HashMap<Integer, String> map) {
     
       ArrayList<String> result = new ArrayList<>();
+      // For each key in the HashMap:
+      for (Integer key : map.keySet()) {
 
-      /*
-       * ADD YOUR CODE HERE
-       *
-       * Hint: Consider iterating over the HashMap using the keySet method.
-       */
-
-
+          // Check if odd key % 2 =/= 0
+          if (!(key % 2 == 0)) {
+              // Add the value to the result
+              result.add(map.get(key));
+          }
+      }
+      // Return the result
       return result;
   }
 
@@ -105,12 +111,22 @@ class HashingProblems {
    */
 
   public int twoSums(int[] numbers, int k) {
+      // Create a HashSet to store the numbers
+      HashSet<Integer> hashSet = new HashSet<>();
 
-      /*
-       * ADD YOUR CODE HERE
-       */
+      // The number of times the target (k) appears
+      int target = 0;
 
-      return -1;
+      // π
+      for (int n : numbers) {
+          hashSet.add(n);
+      }
+      for (int n : numbers) {
+          if (hashSet.contains(n + k)) {
+              target++;
+          }
+      }
+        return target;
   }
 
 } /* end class HashingProblems */
